@@ -1,3 +1,5 @@
+//N16051079 §d«a¹F HW1_2
+
 #include"stdafx.h"
 #include"HW01_02.h"
 #include<iostream>
