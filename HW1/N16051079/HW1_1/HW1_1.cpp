@@ -62,7 +62,7 @@ int main()
 	sortMax(c, d);
 
 	//建立char矩陣
-	char *test[c_test] = {"hello","he","you","cool","world","microsoft","applepie","enterprise"};
+	char *test[c_test] = {"hello","he","you","cool","world","microsoft","applepie","enrise"};
 	cout << "字串矩陣為: "<<endl;
 	
 	for (int i = 0; i < c_test; i++) 
@@ -104,22 +104,33 @@ template<>void sortMax<char*>(char **b, int n)				//找尋最長char陣列的函示
 {															//char的字串陣列為二維陣列，所以要用char**
 	int i, j;
 	char *temp =new char;
-	char **test = b;
-	int x=0;
+	
+	
+	char**test = NULL;										//建立一個新的二維字串陣列test 以免排序的時候換掉原char陣列的值與位子
+	test = new char*[n];	
+	
+	for (int i = 0; i < n ; i++)							//將原char陣列存入新的test陣列中
+	{
+		*(test + i) = *(b + i);
+	}	
+
 	for (i = 0; i < n - 1; i++)
 	{
 		for (j = 0; j < n - 1; j++)
 		{
 			if (strlen(*(test + j)) >strlen( *(test + j + 1)))		//字串長度的比較
 			{
-			
-				//cout << *(b + j) << endl;
 				temp = *(test + j);
 				*(test + j) = *(test + j + 1);
 				*(test + j + 1) = temp;
 			}
 		}
-	}	
-	cout << "字串陣列的最長字為: " << *(test + n - 1) << " 地址為:" << (test + n - 1);
+	}
 
+	int search=0;											
+	while (*(test + n-1) != *(b + search))					//比較最長的字串在原字串的哪個位子
+	{
+		search++;
+	}	
+	cout << "字串陣列的最長字為: " << *(test + n - 1) << " 地址為:" << (b + search)<<endl;
 }
