@@ -101,12 +101,7 @@ namespace MyGeometry
 					sortPoint[j + 1].y = tempy;
 				}
 			}
-		}
-		/*cout <<"與原點距離由小到大排序為: \n";
-		for (int i = 0; i < nPoint; i++) 
-		{
-			cout << sortPoint[i].CoutPoint()<<": "<< sortPoint[i].Length()<<endl;
-		}*/
+		}		
 		return sortPoint;
 	}
 	void Report(const char*fname,int n) 
@@ -116,6 +111,11 @@ namespace MyGeometry
 		unsigned int &number = nu;
 		Point*lpoint = LoadPoint(fname, number);
 		cout << fname << "點數目: " << number<<endl;
+		cout << "各點的座標: " << endl;
+		for (int i = 0; i < number; i++) 
+		{
+			cout<<"#"<<i+1<<": "<<lpoint[i].CoutPoint()<<" 與原點距離: "<<lpoint[i].Length()<<endl;
+		}
 		Point*xpoint = MinVerticalDistance(lpoint, number);
 		cout << "最接近x軸的點: " << xpoint[0].CoutPoint() << endl;
 		Point*closepoint=SortbyLength(lpoint, number);
