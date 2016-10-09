@@ -7,6 +7,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <iomanip>
 using namespace std;
 
 template <class T>											//找尋陣列最大值的樣板函式
@@ -66,7 +67,7 @@ int main()
 	
 	for (int i = 0; i < c_test; i++) 
 	{
-		cout <<*(test + i) << " 地址為:"<<(test+i)<<endl;
+		cout <<left<<setw(10)<<*(test + i) << " 地址為:"<<(test+i)<<endl;
 	}
 
 	cout << endl;

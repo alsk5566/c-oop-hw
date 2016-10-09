@@ -6,6 +6,7 @@
 #include<fstream>
 #include<sstream>
 #include<cmath>
+#include <iomanip>
 using namespace std;
 
 namespace MyGeometry
@@ -117,7 +118,7 @@ namespace MyGeometry
 		cout << "各點的座標: " << endl;
 		for (int i = 0; i < number; i++) 
 		{
-			cout<<"#"<<i+1<<": "<<lpoint[i].CoutPoint()<<" 與原點距離: "<<lpoint[i].Length()<<endl;
+			cout<<"#"<<": "<< i + 1 <<" "<<lpoint[i].CoutPoint()<<" 與原點距離: "<<lpoint[i].Length()<<endl;
 		}
 		Point*xpoint = MinVerticalDistance(lpoint, number);
 		cout << "最接近x軸的點: " << xpoint[0].CoutPoint() << endl;
