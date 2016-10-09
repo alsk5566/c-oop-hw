@@ -1,5 +1,5 @@
 ﻿  HW01_02.cpp
-c:\users\asus\documents\github\c-oop-hw\hw1\n16051079\hw01_02\hw01_02.cpp(50): warning C4018: '<': signed/unsigned 不相符
-c:\users\asus\documents\github\c-oop-hw\hw1\n16051079\hw01_02\hw01_02.cpp(115): warning C4018: '<': signed/unsigned 不相符
-  HW01_02.vcxproj -> C:\Users\asus\Documents\GitHub\c-oop-hw\HW1\N16051079\Debug\HW01_02.exe
-  HW01_02.vcxproj -> C:\Users\asus\Documents\GitHub\c-oop-hw\HW1\N16051079\Debug\HW01_02.pdb (Full PDB)
+c:\users\tribology_superpc\documents\github\c-oop-hw\hw1\n16051079\hw01_02\hw01_02.cpp(50): warning C4018: '<': signed/unsigned 不相符
+c:\users\tribology_superpc\documents\github\c-oop-hw\hw1\n16051079\hw01_02\hw01_02.cpp(118): warning C4018: '<': signed/unsigned 不相符
+  HW01_02.vcxproj -> C:\Users\Tribology_superPC\Documents\GitHub\c-oop-hw\HW1\N16051079\Debug\HW01_02.exe
+  HW01_02.vcxproj -> C:\Users\Tribology_superPC\Documents\GitHub\c-oop-hw\HW1\N16051079\Debug\HW01_02.pdb (Full PDB)

@@ -57,16 +57,17 @@ namespace MyGeometry
 	}
 
 
-	Point *MinVerticalDistance(Point*LPoint, int nPoint)
+	Point *MinVerticalDistance(Point*LPoint, int nPoint)			//將LoadPoint的陣列LPoint、點數目number丟入計算與x軸的距離
 	{
-		Point *testPoint =LPoint;
-		float tempx;
-		float tempy;
-		for (int i = 0; i < nPoint; i++) 
+		Point *testPoint =LPoint;									//宣告Point陣列testPoint為Lpoint陣列
+		float tempx;												//建立兩個temp用來儲存排序的暫存值	
+		float tempy;	
+	
+		for (int i = 0; i < nPoint; i++)							//66~81為距離x軸大小的排序
 		{
 			for (int j = 0; j < nPoint-1; j++) 
 			{
-				if (testPoint[j].x > testPoint[j + 1].x) 
+				if (abs(testPoint[j].y) > abs(testPoint[j + 1].y)) 
 				{
 					tempx = testPoint[j].x;
 					testPoint[j].x = testPoint[j+1].x;
@@ -78,19 +79,21 @@ namespace MyGeometry
 				}
 			}
 		}
+		cout << endl;
+
 		return testPoint;
 	}
 
-	Point *SortbyLength(Point*Lpoint, int nPoint)
+	Point *SortbyLength(Point*Lpoint, int nPoint)				    //找尋距離原點的長度		
 	{
-		Point *sortPoint = Lpoint;
+		Point *sortPoint = Lpoint;									//與上一個MinVertical的方法相同
 		float tempx;
 		float tempy;
 		for (int i = 0; i < nPoint; i++)
 		{
 			for (int j = 0; j < nPoint - 1; j++)
 			{
-				if (sortPoint[j].Length()>sortPoint[j+1].Length())
+				if (sortPoint[j].Length()>sortPoint[j+1].Length())	//用已有的函數Length去做判別
 				{
 					tempx = sortPoint[j].x;
 					sortPoint[j].x = sortPoint[j + 1].x;
@@ -104,7 +107,7 @@ namespace MyGeometry
 		}		
 		return sortPoint;
 	}
-	void Report(const char*fname,int n) 
+	void Report(const char*fname,int n)																//作業要求的格式
 	{
 		cout << "物件導向程式設計第一次作業 \n" << "N16051079 吳冠達 \n";
 		unsigned nu = n;
