@@ -27,6 +27,7 @@ namespace MyGeometry
 		string pxo = px.str();
 		string pyo = py.str();
 		c ="("+pxo+","+pyo+")";
+
 		return c;
 	}
 	
@@ -38,7 +39,7 @@ namespace MyGeometry
 		const char *fname= filename;
 		fstream pt;													//36~37開啟txt檔
 		pt.open(fname, ios::in);
-
+		
 		FILE *p=fopen(fname,"r");									//39~43計算有幾個點
 		char test[100];												//fgets的引數需要char*
 
