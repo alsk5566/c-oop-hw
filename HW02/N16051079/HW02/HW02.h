@@ -22,12 +22,12 @@ private: const Point* data; //#9
 		 QuadtreeNode* nextNode[4]; //#10 
 		 const Point separate_point; //#11 
 		 const float size;//#12 
-public: QuadtreeNode();//#13 
+public: QuadtreeNode()=delete;//#13 
 		QuadtreeNode(const Point&, const Point&, const float);//#14 
 		QuadtreeNode(const QuadtreeNode&);//#15 
 		~QuadtreeNode();//#16 
 		bool InsertPoint(const Point&);//#17 
-		void FindClosestPoint()const;//#18 
+		void FindClosestPoint(const Point&)const;//#18 
 };
 
 

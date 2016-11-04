@@ -1,7 +1,4 @@
-﻿  useHW02.cpp
-  正在產生程式碼...
-  正在編譯...
-  HW02.cpp
-  正在產生程式碼...
+﻿  HW02.cpp
+d:\oop\hw02\n16051079\hw02\hw02.cpp(69): warning C4717: 'QuadtreeNode::QuadtreeNode': 在所有控制路徑上遞迴，函式將導致執行階段堆疊溢位
   HW02.vcxproj -> D:\oop\HW02\N16051079\Debug\HW02.exe
   HW02.vcxproj -> D:\oop\HW02\N16051079\Debug\HW02.pdb (Full PDB)
