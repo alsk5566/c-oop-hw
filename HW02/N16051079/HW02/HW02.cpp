@@ -53,8 +53,41 @@ std::ostream & operator<<(std::ostream& s, const Point& p)
 	s << "(" << p.x << ", " << p.y << ")";
 	return s;
 }
-/*
-QuadtreeNode::QuadtreeNode(const Point& p1, const Point& p2, const float point)
+
+QuadtreeNode::QuadtreeNode(const Point& p1, const Point& p2, const float ssize):data(&p1),separate_point(p2),size(ssize)
 {
-	cout << ":";
-}*/
+
+}
+
+QuadtreeNode::QuadtreeNode(const QuadtreeNode& p): QuadtreeNode(p)
+{
+	
+}
+QuadtreeNode::~QuadtreeNode() 
+{
+	
+}
+
+
+bool QuadtreeNode::InsertPoint(const Point& point) 
+{
+	const Point d = point;
+	const Point s = separate_point;
+	float ssize = size;
+
+	QuadtreeNode *head = NULL;
+	QuadtreeNode *current = NULL;
+	QuadtreeNode *prev = NULL;
+
+
+	current = (QuadtreeNode*)malloc(sizeof(QuadtreeNode));
+
+	if (d[0] > s[0]) 
+	{
+
+	}
+
+
+
+
+}

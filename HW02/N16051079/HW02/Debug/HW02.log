@@ -1,7 +1,5 @@
 ﻿  useHW02.cpp
-  正在產生程式碼...
-  正在編譯...
-  HW02.cpp
-  正在產生程式碼...
-  HW02.vcxproj -> D:\oop\HW02\N16051079\Debug\HW02.exe
-  HW02.vcxproj -> D:\oop\HW02\N16051079\Debug\HW02.pdb (Full PDB)
+c:\users\asus\desktop\c++\oop\hw02\n16051079\hw02\usehw02.cpp(9): warning C4101: 'a': 未參考的區域變數
+c:\users\asus\desktop\c++\oop\hw02\n16051079\hw02\usehw02.cpp(9): warning C4101: 'b': 未參考的區域變數
+  HW02.vcxproj -> C:\Users\asus\Desktop\c++\oop\HW02\N16051079\Debug\HW02.exe
+  HW02.vcxproj -> C:\Users\asus\Desktop\c++\oop\HW02\N16051079\Debug\HW02.pdb (Full PDB)
