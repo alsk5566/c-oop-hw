@@ -1,6 +1,12 @@
 ﻿  HW02.cpp
+<<<<<<< HEAD
 c:\users\asus\desktop\c++\oop\hw02\n16051079\hw02\hw02.cpp(259): warning C4101: 'level': 未參考的區域變數
 c:\users\asus\desktop\c++\oop\hw02\n16051079\hw02\hw02.cpp(70): warning C4717: 'QuadtreeNode::QuadtreeNode': 在所有控制路徑上遞迴，函式將導致執行階段堆疊溢位
 c:\users\asus\desktop\c++\oop\hw02\n16051079\hw02\hw02.cpp(372): warning C4715: 'QuadtreeNode::FindClosestPoint': 不是所有控制路徑都傳回值
   HW02.vcxproj -> C:\Users\asus\Desktop\c++\oop\HW02\N16051079\Debug\HW02.exe
   HW02.vcxproj -> C:\Users\asus\Desktop\c++\oop\HW02\N16051079\Debug\HW02.pdb (Full PDB)
+=======
+d:\oop\hw02\n16051079\hw02\hw02.cpp(69): warning C4717: 'QuadtreeNode::QuadtreeNode': 在所有控制路徑上遞迴，函式將導致執行階段堆疊溢位
+  HW02.vcxproj -> D:\oop\HW02\N16051079\Debug\HW02.exe
+  HW02.vcxproj -> D:\oop\HW02\N16051079\Debug\HW02.pdb (Full PDB)
+>>>>>>> f76a06fac7a85804f7b31306bb811cd48dd02808

@@ -74,6 +74,7 @@ QuadtreeNode::~QuadtreeNode()
 }
 
 
+<<<<<<< HEAD
 bool QuadtreeNode::InsertPoint(const Point& p)
 {
 	//startptr永遠指向根節點
@@ -247,9 +248,110 @@ bool QuadtreeNode::InsertPoint(const Point& p)
 
 		}
 		
+=======
+bool QuadtreeNode::InsertPoint(const Point& inpoint) 
+{
+	const Point p = inpoint;
 
+	QuadtreeNode *startptr=this;
+	QuadtreeNode *newptr;
+	
+
+
+	bool end = false;	
+	float ssize = size;
+	
+	while (!end) 
+	{
+		Point s;		
+		s.Set_data(separate_point[0], separate_point[1]);
+
+		//第一象限
+		if (p[0] > separate_point[0] && p[1] > separate_point[1])
+		{
+			ssize = ssize / 2;
+			s.Set_data(ssize+(s[0] / 2), ssize+(s[1] / 2));			
+			if (startptr->nextNode[0] == NULL) 
+			{				
+				newptr = new QuadtreeNode(p, s, ssize);
+				startptr->nextNode[0] = newptr;
+			}
+			else 
+			{
+				const Point *temp = startptr->data;
+				nextNode[0]->InsertPoint(p);
+				startptr->data = NULL;
+			}
+			end = true;
+
+			startptr = startptr->nextNode[0];
+		}
+		//第二象限
+		if (p[0] < separate_point[0] && p[1] > separate_point[1])
+		{
+			ssize = ssize / 2;
+			s.Set_data(-ssize - (s[0] / 2), ssize + (s[1] / 2));
+			
+			if (startptr->nextNode[1] == NULL)
+			{
+				newptr = new QuadtreeNode(p, s, ssize);
+				startptr->nextNode[1] = newptr;
+			}
+			else
+			{
+				const Point *temp = startptr->data;
+				nextNode[1]->InsertPoint(p);
+				startptr->data = NULL;
+			}
+			end = true;
+
+			startptr = startptr->nextNode[1];
+		}
+		//第三象限
+		if (p[0] < separate_point[0] && p[1] < separate_point[1])
+		{
+			ssize = ssize / 2;
+			s.Set_data(-ssize - (s[0] / 2), -ssize - (s[1] / 2));			
+			if (startptr->nextNode[2] == NULL)
+			{
+				newptr = new QuadtreeNode(p, s, ssize);
+				startptr->nextNode[2] = newptr;
+			}
+			else
+			{
+				const Point *temp = startptr->data;
+				nextNode[2]->InsertPoint(p);
+				startptr->data = NULL;
+			}
+			end = true;
+
+			startptr = startptr->nextNode[2];
+		}
+		//第四象限
+		if (p[0] > separate_point[0] && p[1] < separate_point[1])
+		{
+			ssize = ssize / 2;
+			s.Set_data(ssize + (s[0] / 2), -ssize + (s[1] / 2));
+			if (startptr->nextNode[3] == NULL)
+			{
+				newptr = new QuadtreeNode(p, s, ssize);
+				startptr->nextNode[3] = newptr;
+			}
+			else
+			{
+				const Point *temp = startptr->data;
+				nextNode[3]->InsertPoint(p);
+				startptr->data = NULL;
+			}
+			end = true;
+>>>>>>> f76a06fac7a85804f7b31306bb811cd48dd02808
+
+			startptr = startptr->nextNode[3];
+		}
+		
 	}
 	return true;
+<<<<<<< HEAD
 }
 const Point QuadtreeNode::FindClosestPoint(const Point& p) const 
 {
@@ -288,6 +390,8 @@ const Point QuadtreeNode::FindClosestPoint(const Point& p) const
 		//第二象限
 		if (p[0] < startptr->separate_point[0] && p[1] > startptr->separate_point[1])
 		{
+=======
+>>>>>>> f76a06fac7a85804f7b31306bb811cd48dd02808
 
 			Point s(s[0] - (ssize), s[1] + (ssize));
 			if (startptr->nextNode[1] == NULL)
@@ -369,4 +473,105 @@ const Point QuadtreeNode::FindClosestPoint(const Point& p) const
 		return s;
 	}
 	
+}
+void QuadtreeNode::FindClosestPoint(const Point& inpoint)const
+{
+	const Point p = inpoint;
+
+	const QuadtreeNode *startptr = this;
+	QuadtreeNode *newptr;
+
+
+
+	bool end = false;
+	float ssize = size;
+
+	while (!end)
+	{
+		Point s;
+		s.Set_data(separate_point[0], separate_point[1]);
+
+		//第一象限
+		if (p[0] > separate_point[0] && p[1] > separate_point[1])
+		{
+			ssize = ssize / 2;
+			s.Set_data(ssize + (s[0] / 2), ssize + (s[1] / 2));
+			if (startptr->nextNode[0] == NULL)
+			{
+				newptr = new QuadtreeNode(p, s, ssize);
+				startptr->nextNode[0] = newptr;
+			}
+			else
+			{
+				const Point *temp = startptr->data;
+				nextNode[0]->InsertPoint(p);
+				startptr->data = NULL;
+			}
+			end = true;
+
+			startptr = startptr->nextNode[0];
+		}
+		//第二象限
+		if (p[0] < separate_point[0] && p[1] > separate_point[1])
+		{
+			ssize = ssize / 2;
+			s.Set_data(-ssize - (s[0] / 2), ssize + (s[1] / 2));
+
+			if (startptr->nextNode[1] == NULL)
+			{
+				newptr = new QuadtreeNode(p, s, ssize);
+				startptr->nextNode[1] = newptr;
+			}
+			else
+			{
+				const Point *temp = startptr->data;
+				nextNode[1]->InsertPoint(p);
+				startptr->data = NULL;
+			}
+			end = true;
+
+			startptr = startptr->nextNode[1];
+		}
+		//第三象限
+		if (p[0] < separate_point[0] && p[1] < separate_point[1])
+		{
+			ssize = ssize / 2;
+			s.Set_data(-ssize - (s[0] / 2), -ssize - (s[1] / 2));
+			if (startptr->nextNode[2] == NULL)
+			{
+				newptr = new QuadtreeNode(p, s, ssize);
+				startptr->nextNode[2] = newptr;
+			}
+			else
+			{
+				const Point *temp = startptr->data;
+				nextNode[2]->InsertPoint(p);
+				startptr->data = NULL;
+			}
+			end = true;
+
+			startptr = startptr->nextNode[2];
+		}
+		//第四象限
+		if (p[0] > separate_point[0] && p[1] < separate_point[1])
+		{
+			ssize = ssize / 2;
+			s.Set_data(ssize + (s[0] / 2), -ssize + (s[1] / 2));
+			if (startptr->nextNode[3] == NULL)
+			{
+				newptr = new QuadtreeNode(p, s, ssize);
+				startptr->nextNode[3] = newptr;
+			}
+			else
+			{
+				const Point *temp = startptr->data;
+				nextNode[3]->InsertPoint(p);
+				startptr->data = NULL;
+			}
+			end = true;
+
+			startptr = startptr->nextNode[3];
+		}
+
+	}
 }
